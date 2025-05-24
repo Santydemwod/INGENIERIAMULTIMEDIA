@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería - Ingeniería Multimedia</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/funciones.js" defer></script>
+</head>
+<script>
+  const imagenes = [
+    "imagenes/img1.jpg",
+    "imagenes/img2.jpg",
+    "imagenes/img3.jpg"
+  ];
+
+  let index = 0;
+  const sliderImage = document.getElementById("slider-image");
+
+  function showImage(direction) {
+    sliderImage.style.opacity = 0;
+    setTimeout(() => {
+      sliderImage.src = imagenes[index];
+      sliderImage.style.opacity = 1;
+    }, 300);
+  }
+
+  function nextImage() {
+    index = (index + 1) % imagenes.length;
+    showImage("next");
+  }
+
+  function prevImage() {
+    index = (index - 1 + imagenes.length) % imagenes.length;
+    showImage("prev");
+  }
+</script>
+
+<body>
+
+
+</div>
+
+    
+   <header class="banner">
+  <h1 id="banner-text">Ingeniería Multimedia - UNAD</h1>
+</header>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Menú</a>
+                    <ul class="submenu">
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="ventajas.html">Ventajas y Desventajas</a></li>
+                        <li><a href="unad.html">UNAD</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+       <h2>Galería</h2>
+<div class="slider">
+  <div class="slider-container">
+    <img src="imagenes/img1.jpg" id="slider-image" alt="Imagen de galería">
+  </div>
+  <div class="slider-buttons">
+    <button onclick="prevImage()">⟨ Anterior</button>
+    <button onclick="nextImage()">Siguiente ⟩</button>
+  </div>
+</div>
+    </main>
+<script>
+  const imagenes = [
+    "imagenes/img1.jpg",
+    "imagenes/img2.jpg",
+    "imagenes/img3.jpg"
+    // Agrega más si las tienes, respeta el orden y carpeta
+  ];
+
+  let index = 0;
+  const sliderImage = document.getElementById("slider-image");
+
+  function showImage() {
+    sliderImage.src = imagenes[index];
+  }
+
+  function nextImage() {
+    index = (index + 1) % imagenes.length;
+    showImage();
+  }
+
+  function prevImage() {
+    index = (index - 1 + imagenes.length) % imagenes.length;
+    showImage();
+  }
+</script>
+<footer style="background:#111;color:#fff;padding:20px;text-align:center;margin-top:40px;border-top:2px solid #444;">
+  <p>&copy; 2025 Ingeniería Multimedia - UNAD. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
